@@ -62,8 +62,8 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/${{ github.actor }}/fastapi-backend:latest
-          cache-from: type=registry,ref=ghcr.io/${{ github.actor }}/fastapi-backend:latest
+            ghcr.io/${{ github.actor }}/fastapi-starter:latest
+          cache-from: type=registry,ref=ghcr.io/${{ github.actor }}/fastapi-starter:latest
           cache-to: type=inline
 
       - name: Remove old images
@@ -72,5 +72,5 @@ jobs:
           account: ${{ github.actor }}
           token: ${{ secrets.GITHUB_TOKEN }}
           cut-off: 1h
-          image-names: "fastapi-backend"
+          image-names: "fastapi-starter"
           tag-selection: untagged
