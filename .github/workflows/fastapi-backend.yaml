@@ -34,9 +34,12 @@ jobs:
         run: |
           pytest tests/ -v
 
-  build:
+  build_and_push:
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
 
     steps:
       - name: Checkout code
