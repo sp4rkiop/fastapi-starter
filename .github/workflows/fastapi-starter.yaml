@@ -69,7 +69,7 @@ jobs:
       - name: Remove old images
         uses: snok/container-retention-policy@v3.0.1
         with:
-          account: ${{ github.actor }}
+          account: user
           token: ${{ secrets.GITHUB_TOKEN }}
           cut-off: 1h
           image-names: "fastapi-starter"
